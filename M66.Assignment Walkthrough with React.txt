@@ -1,0 +1,330 @@
+
+M66.Assignment Walkthrough with React ;
+
+#Walkthrough with React Assignment ;
+
+......................................................................
+
+#Problem statement ;
+
+1.Create a component named "Person" that takes two props - "name" and "age". 
+The component should display the person's name and age in a paragraph element.
+
+2.Create a component named "Button" that takes two props - "text" and "onClick". 
+The component should display a button element with the given text and call the 
+onClick function when clicked.
+ 
+3.Create a component named "Header" that takes one prop - "title". The component 
+should display a header element with the given title.
+
+4.Create a component named "List" that takes one prop - "items". The component 
+should display an unordered list element with the given list items.
+
+......................................................................
+
+1.Create a component named "Person" that takes two props - "name" and "age". 
+The component should display the person's name and age in a paragraph element.
+
+A.To create a React component named `Person` that takes two props—`name` and `age`—and displays them in a paragraph element, follow these steps:
+
+1. **Create the Component:**
+   - Define the `Person` component as a functional component.
+   - Use destructuring to extract the `name` and `age` props.
+   - Return a JSX element containing a paragraph that displays these props.
+
+Here’s how you can implement this in React:
+
+```jsx
+import React from 'react';
+
+// Define the Person component
+const Person = ({ name, age }) => {
+  return (
+    <p>{name} is {age} years old.</p>
+  );
+};
+
+export default Person;
+```
+
+### Explanation:
+
+1. **Import React:**
+   - Import React from the `react` library to use JSX syntax and create the component.
+
+2. **Define the Component:**
+   - `Person` is a functional component that receives `props` as its argument.
+   - Destructure `name` and `age` directly from the props object.
+
+3. **Return JSX:**
+   - Return a JSX `<p>` element that displays the `name` and `age` in a formatted string.
+
+### Usage Example:
+
+To use the `Person` component in another part of your application, you can do the following:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Person from './Person'; // Adjust the import path according to your file structure
+
+const App = () => {
+  return (
+    <div>
+      <Person name="Alice" age={30} />
+      <Person name="Bob" age={25} />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+### Summary:
+- The `Person` component takes `name` and `age` as props and displays them in a paragraph.
+- This component is simple and reusable, and it demonstrates basic prop handling in React.
+
+......................................................................
+
+2.Create a component named "Button" that takes two props - "text" and "onClick". 
+The component should display a button element with the given text and call the 
+onClick function when clicked.
+ 
+A.To create a React component named `Button` that takes two props—`text` and `onClick`—and displays a button element with the given text and functionality, follow these steps:
+
+1. **Create the Component:**
+   - Define the `Button` component as a functional component.
+   - Use destructuring to extract the `text` and `onClick` props.
+   - Return a JSX `<button>` element that uses these props.
+
+Here’s how you can implement this in React:
+
+```jsx
+import React from 'react';
+
+// Define the Button component
+const Button = ({ text, onClick }) => {
+  return (
+    <button onClick={onClick}>
+      {text}
+    </button>
+  );
+};
+
+export default Button;
+```
+
+### Explanation:
+
+1. **Import React:**
+   - Import React from the `react` library to use JSX syntax and create the component.
+
+2. **Define the Component:**
+   - `Button` is a functional component that receives `props` as its argument.
+   - Destructure `text` and `onClick` directly from the props object.
+
+3. **Return JSX:**
+   - Return a JSX `<button>` element that uses the `text` prop for the button label.
+   - Attach the `onClick` function to the `onClick` event of the button so that it gets called when the button is clicked.
+
+### Usage Example:
+
+To use the `Button` component in another part of your application, you can do the following:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Button from './Button'; // Adjust the import path according to your file structure
+
+const handleClick = () => {
+  alert('Button was clicked!');
+};
+
+const App = () => {
+  return (
+    <div>
+      <Button text="Click Me" onClick={handleClick} />
+      <Button text="Another Button" onClick={() => console.log('Another button clicked')} />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+### Summary:
+- The `Button` component takes `text` and `onClick` as props and displays a button.
+- When the button is clicked, the `onClick` function is called.
+- This component is versatile and can be reused in different parts of your application with different button texts and actions.
+
+......................................................................
+
+3.Create a component named "Header" that takes one prop - "title". The component 
+should display a header element with the given title.
+
+A.To create a React component named `Header` that takes a single prop, `title`, and displays it inside a header element, follow these steps:
+
+1. **Create the Component:**
+   - Define the `Header` component as a functional component.
+   - Use destructuring to extract the `title` prop.
+   - Return a JSX header element (e.g., `<h1>`, `<h2>`, etc.) that displays the title.
+
+Here’s how you can implement this in React:
+
+```jsx
+import React from 'react';
+
+// Define the Header component
+const Header = ({ title }) => {
+  return (
+    <header>
+      <h1>{title}</h1>
+    </header>
+  );
+};
+
+export default Header;
+```
+
+### Explanation:
+
+1. **Import React:**
+   - Import React from the `react` library to use JSX syntax and create the component.
+
+2. **Define the Component:**
+   - `Header` is a functional component that receives `props` as its argument.
+   - Destructure `title` from the props object.
+
+3. **Return JSX:**
+   - Return a JSX `<header>` element containing an `<h1>` element to display the `title`.
+
+### Usage Example:
+
+To use the `Header` component in another part of your application, you can do the following:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Header from './Header'; // Adjust the import path according to your file structure
+
+const App = () => {
+  return (
+    <div>
+      <Header title="Welcome to My Website" />
+      <Header title="About Us" />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+### Summary:
+- The `Header` component takes a `title` prop and displays it inside an `<h1>` element within a `<header>` element.
+- This component is simple and reusable, allowing you to display various titles in different parts of your application.
+
+......................................................................
+
+4.Create a component named "List" that takes one prop - "items". The component 
+should display an unordered list element with the given list items.
+
+A.To create a React component named `List` that takes a single prop, `items`, and displays them as an unordered list, follow these steps:
+
+1. **Create the Component:**
+   - Define the `List` component as a functional component.
+   - Use destructuring to extract the `items` prop.
+   - Return a JSX `<ul>` element containing `<li>` elements for each item in the `items` array.
+
+Here’s how you can implement this in React:
+
+```jsx
+import React from 'react';
+
+// Define the List component
+const List = ({ items }) => {
+  return (
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
+};
+
+export default List;
+```
+
+### Explanation:
+
+1. **Import React:**
+   - Import React from the `react` library to use JSX syntax and create the component.
+
+2. **Define the Component:**
+   - `List` is a functional component that receives `props` as its argument.
+   - Destructure `items` from the props object.
+
+3. **Return JSX:**
+   - Use the `map` method to iterate over the `items` array and create an `<li>` element for each item.
+   - The `key` prop is set to the index to provide a unique key for each list item (using the index is acceptable in this simple example, but a unique identifier is better if available).
+
+### Usage Example:
+
+To use the `List` component in another part of your application, you can do the following:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import List from './List'; // Adjust the import path according to your file structure
+
+const App = () => {
+  const items = ['Item 1', 'Item 2', 'Item 3'];
+
+  return (
+    <div>
+      <List items={items} />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+### Summary:
+- The `List` component takes an `items` prop (an array of strings) and displays each item as a list element inside an unordered list.
+- This component is flexible and can display any number of items passed to it, making it reusable for different lists in your application.
+
+......................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
